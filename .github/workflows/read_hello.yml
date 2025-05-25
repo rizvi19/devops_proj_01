@@ -1,0 +1,19 @@
+name: Read_Hello_File
+
+on: 
+    push:
+        branches:
+            - main
+
+jobs:
+    read_hello_content:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Read hello
+              run: |
+                echo "Extracting hello.txt content"
+                cat hello.txt
